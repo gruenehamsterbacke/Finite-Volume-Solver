@@ -1,8 +1,10 @@
 # numerical_toolbox
 
-The aim is to develop a Finite-Volume-Solver.
+The aim is to develop a Finite-Volume-Solver. 
 
 Milestones:
+
+(0) Write a documentation
 
 (1) Implement a class of solvers for linear systems of equations 
 
@@ -13,3 +15,6 @@ Milestones:
 (4) Develop a toolbox for mesh generation 
 
 (5) Develop a toolbox for post-processing 
+
+(7) Add a graphical interface
+
