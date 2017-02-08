@@ -57,50 +57,57 @@ int main()
 			// Pivot: search
 			while(i_temp<size)
 			{
-				if (abs(a[i_temp][i])>a[i_temp][i]) pivot_row=i_temp;
+				if (abs(a[i_temp][i])>a[i][i]) pivot_row=i_temp; 
 				i_temp++;
 			}
+			cout << "break" << endl;
+			cout << pivot_row << endl;
 			
-			// Pivot: change
+			i++; // Abbruchbedingung
 			
-			j_temp=0;
-			while(j_temp < size) 
-				{
-					row_temp[j_temp]=a[i][j_temp];
-					a[i][j_temp]=a[pivot_row][j_temp];
-					a[pivot_row][j_temp]=row_temp[j_temp];
-										
-					j_temp++;
-				}
-				
-			vector_temp=b[i];
-			b[i]=b[pivot_row];
-			b[pivot_row]=vector_temp;
-			
-			// Gauss: Matrix decomposition	
-
-				
-				
-				
-				i_temp=i+1;  
-				
-				while (i_temp < size)
-				{
-					j_temp=0;
-
-					while(j_temp < size) 
-					{
-						a[i_temp][j_temp]=a[i_temp][j_temp] - (a[i_temp][i] / a[i][i])*a[i][j_temp];
-						b[i_temp]=b[i_temp]-(a[i_temp][i] / a[i][i])*b[i];
-						j_temp++;
-					}	
-					i_temp++;
-				}
-				i++;
+//			// Pivot: change
+//			
+//			j_temp=0; // BEMERKUNG: hier reicht ggf. auch ein höherer Zähler
+//			while(j_temp < size) 
+//				{
+//					row_temp[j_temp]=a[i][j_temp];
+//					a[i][j_temp]=a[pivot_row][j_temp];
+//					a[pivot_row][j_temp]=row_temp[j_temp];
+//										
+//					j_temp++;
+//				}
+//				
+//			vector_temp=b[i];
+//			b[i]=b[pivot_row];
+//			b[pivot_row]=vector_temp;
+//			
+//			 //Gauss: Matrix decomposition	
+//
+//				
+//				
+//				
+//				i_temp=i+1;  
+//				
+//				while (i_temp < size)
+//				{
+//					j_temp=0;
+//
+//					while(j_temp < size) 
+//					{
+//						a[i_temp][j_temp]=a[i_temp][j_temp] - (a[i_temp][i] / a[i][i])*a[i][j_temp];
+//						b[i_temp]=b[i_temp]-(a[i_temp][i] / a[i][i])*b[i];
+//						j_temp++;
+//					}	
+//					i_temp++;
+//				}
+////				i++; // DOPPELT GGF. LÖSCHEN
 	}
 	
+	
+	
+	
 	// Display the lower triangular matrix
-	cout << "lower triangular matrix" << endl;
+	cout << "upper triangular matrix" << endl;
 	cout << a[1][1] << endl;
 	cout << a[1][2] << endl;
 	cout << a[1][3] << endl;
@@ -114,6 +121,9 @@ int main()
 	
 	
 	// Substitute to find the solution
+	
+	
+	// Testfall für untere Matrix definieren.
 	
 	double sum;
 	
