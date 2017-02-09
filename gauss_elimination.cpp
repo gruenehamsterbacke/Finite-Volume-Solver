@@ -7,6 +7,8 @@
 using namespace std;
 
 
+
+
 int main()
 {
 	
@@ -29,7 +31,21 @@ int main()
 	double row_temp[3];
 	double vector_temp;
 	
-	
+  cout << a[0][0] << endl;
+  cout << a[0][1] << endl;
+  cout << a[0][2] << endl;
+  cout << a[1][0] << endl;
+  cout << a[1][1] << endl;
+  cout << a[1][2] << endl;
+  cout << a[2][0] << endl;
+  cout << a[2][1] << endl;
+  cout << a[2][2] << endl;
+  
+  
+    cout << "vector" << endl;
+  cout << b[0] << endl;
+  cout << b[1] << endl;
+  cout << b[2] << endl;
 	
 //	// Linear system - Testcase 2
 //	double a[4][4]={{1,1,1,0},{-2,-2,2,3.33},{1,-1,-1,0}{0,2.5,3,-1}}; 
@@ -52,7 +68,7 @@ int main()
 	while (i < size){
 
 			i_temp=i; // Gibt die aktuelle Zeile an, die bearbeitet wird
-			pivot_row =0;
+			pivot_row =i;
 			
 			// Pivot: search
 			while(i_temp<size)
@@ -63,60 +79,80 @@ int main()
 			cout << "break" << endl;
 			cout << pivot_row << endl;
 			
-			i++; // Abbruchbedingung
+			
 			
 //			// Pivot: change
 //			
-//			j_temp=0; // BEMERKUNG: hier reicht ggf. auch ein höherer Zähler
-//			while(j_temp < size) 
-//				{
-//					row_temp[j_temp]=a[i][j_temp];
-//					a[i][j_temp]=a[pivot_row][j_temp];
-//					a[pivot_row][j_temp]=row_temp[j_temp];
-//										
-//					j_temp++;
-//				}
-//				
-//			vector_temp=b[i];
-//			b[i]=b[pivot_row];
-//			b[pivot_row]=vector_temp;
-//			
-//			 //Gauss: Matrix decomposition	
-//
-//				
-//				
-//				
-//				i_temp=i+1;  
-//				
-//				while (i_temp < size)
-//				{
-//					j_temp=0;
-//
-//					while(j_temp < size) 
-//					{
-//						a[i_temp][j_temp]=a[i_temp][j_temp] - (a[i_temp][i] / a[i][i])*a[i][j_temp];
-//						b[i_temp]=b[i_temp]-(a[i_temp][i] / a[i][i])*b[i];
-//						j_temp++;
-//					}	
-//					i_temp++;
-//				}
-////				i++; // DOPPELT GGF. LÖSCHEN
+			j_temp=0; // BEMERKUNG: hier reicht ggf. auch ein höherer Zähler
+			while(j_temp < size) 
+				{
+					row_temp[j_temp]=a[i][j_temp];
+					a[i][j_temp]=a[pivot_row][j_temp];
+					a[pivot_row][j_temp]=row_temp[j_temp];
+										
+					j_temp++;
+				}
+				
+			  cout << "matrix" << endl;
+  cout << a[0][0] << endl;
+  cout << a[0][1] << endl;
+  cout << a[0][2] << endl;
+  cout << a[1][0] << endl;
+  cout << a[1][1] << endl;
+  cout << a[1][2] << endl;
+  cout << a[2][0] << endl;
+  cout << a[2][1] << endl;
+  cout << a[2][2] << endl;
+				
+			vector_temp=b[i];
+			b[i]=b[pivot_row];
+			b[pivot_row]=vector_temp;
+
+  cout << "vector" << endl;
+  cout << b[0] << endl;
+  cout << b[1] << endl;
+  cout << b[2] << endl;
+			
+			
+			
+			
+// 			 //Gauss: Matrix decomposition	
+// 
+// 				i_temp=i+1;  
+// 				
+// 				while (i_temp < size)
+// 				{
+// 					j_temp=0;
+// 
+// 					while(j_temp < size) 
+// 					{
+// 						a[i_temp][j_temp]=a[i_temp][j_temp] - (a[i_temp][i] / a[i][i])*a[i][j_temp];
+// 						b[i_temp]=b[i_temp]-(a[i_temp][i] / a[i][i])*b[i];
+// 						j_temp++;
+// 					}	
+// 					i_temp++;
+// 				}
+////				
+			i++;
 	}
 	
 	
-	
-	
-	// Display the lower triangular matrix
+		// Display the lower triangular matrix
 	cout << "upper triangular matrix" << endl;
-	cout << a[1][1] << endl;
-	cout << a[1][2] << endl;
-	cout << a[1][3] << endl;
-	cout << a[2][1] << endl;
-	cout << a[2][2] << endl;
-	cout << a[2][3] << endl;
-	cout << a[3][1] << endl;
-	cout << a[3][2] << endl;
-	cout << a[3][3] << endl;
+				  cout << "matrix" << endl;
+  cout << a[0][0] << endl;
+  cout << a[0][1] << endl;
+  cout << a[0][2] << endl;
+  cout << a[1][0] << endl;
+  cout << a[1][1] << endl;
+  cout << a[1][2] << endl;
+  cout << a[2][0] << endl;
+  cout << a[2][1] << endl;
+  cout << a[2][2] << endl;
+	
+	
+
+
 	
 	
 	
