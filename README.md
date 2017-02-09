@@ -2,9 +2,9 @@
 
 The aim is to develop a Finite-Volume-Solver. 
 
-Milestones:
+Roadmap:
 
-(0) Write a documentation
+(0) Basic tools (like import data files etc.)
 
 (1) Implement a class of solvers for linear systems of equations 
 
@@ -18,3 +18,7 @@ Milestones:
 
 (7) Add a graphical interface
 
+
+
+
+Documentation is coming soon!
