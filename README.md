@@ -1,8 +1,8 @@
-# numerical_toolbox
+# Finite Volume Solver
 
 The aim is to develop a Finite-Volume-Solver. 
 
-Roadmap:
+## Roadmap:
 
 (0) Basic tools (like import data files etc.)
 
