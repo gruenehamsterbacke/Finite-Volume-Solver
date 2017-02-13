@@ -26,6 +26,8 @@ Jacobi and Gauss Seidel: iterative methods, limitations: The Jacobi and Gauss–
 
 more methods are coming soon...
 
+define and document test cases for each solver
+
 ## Finite Volume Solver
 
 insert PDE with appropriate boundary conditions, insert mesh, calculate fluxes etc.
