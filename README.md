@@ -1,6 +1,6 @@
 # Finite Volume Solver
 
-The aim is to develop a Finite-Volume-Solver. 
+The aim is to develop a Finite-Volume-Solver in C++. 
 
 ## Roadmap:
 
@@ -17,6 +17,19 @@ The aim is to develop a Finite-Volume-Solver.
 (5) Develop a toolbox for post-processing 
 
 (7) Add a graphical interface
+
+## Solver for linear systems
+
+Gauss elimination (including a pivot row change): limitations: in general slow and rounding errors can become significant
+
+Jacobi and Gauss Seidel: iterative methods, limitations: The Jacobi and Gauss–Seidel methods for solving a linear system converge if the matrix is strictly (or irreducibly) diagonally dominant (ref wikipedia: https://en.wikipedia.org/wiki/Diagonally_dominant_matrix), maybe implement partial pivoting (??)
+
+more methods are coming soon...
+
+## Finite Volume Solver
+
+insert PDE with appropriate boundary conditions, insert mesh, calculate fluxes etc.
+
 
 ## Manual
 
