@@ -39,6 +39,7 @@ int main()
 	double b[4]={2,2,8,-11};
 	double solution_exact[4]={5,-2,-1,3};
 	double solution_numeric[4];
+	double solution_guess[4]={0,0,0,0};
 	size=4;
 	
 	double row_temp[4];
@@ -60,116 +61,73 @@ int main()
 	
 	// Funktion: übergebe Matrix, Vektor, Verfahren, epsilon >> Ausgabe: Lösungsvektor, quadratisches Residuum, ggf. Anzahl der Iterationen
 	
-	
-	
-	
-	// Algorithm
+		// Algorithm
 	i=0; // Zählindex Zeile
 	j=0; // Zählindex Spalte
 	
 	
-	while (i < size){
-
-			i_temp=i+1; // Gibt die aktuelle Zeile an, die bearbeitet wird
-			pivot_row=i;
-			
-			// Pivot: search
-			while(i_temp<size)
-			{
-				if (abs(a[i_temp][i])>a[i][i]) pivot_row=i_temp; 
-				i_temp++;
-			}
-			
-//			// Pivot: change
-//			
-			j_temp=0; // BEMERKUNG: hier reicht ggf. auch ein höherer Zähler
-			while(j_temp < size) 
-				{
-					row_temp[j_temp]=a[i][j_temp];
-					a[i][j_temp]=a[pivot_row][j_temp];
-					a[pivot_row][j_temp]=row_temp[j_temp];									
-					j_temp++;
-				}
-				
-			vector_temp=b[i];
-			b[i]=b[pivot_row];
-			b[pivot_row]=vector_temp;
-
- 			 //Gauss: Matrix elimination
- 				i_temp=i+1;  // i is the row with the reference row (pivot row) and the Gauss elimination starts one row below
-		
- 				while (i_temp < size)
- 				{
- 					j_temp=0; // Zähler ggf. erhöhen
- 					temp_var=a[i_temp][i];
- 				
- 					while(j_temp < size) 
- 					{
- 						 cout << "j_temp:" << j_temp << endl;
- 						 cout << "a(i, j_temp)" << a[i][j_temp] << endl;
- 						 cout << "a(i,i)" << a[i][i] << endl;
- 						 cout << "a[i_temp][i]" << a[i_temp][i] << endl;
- 						 cout << "temp_var" << temp_var << endl;
-				 
-						 a[i_temp][j_temp]=a[i_temp][j_temp] - (temp_var / a[i][i])*a[i][j_temp];
-//						 cout << "a(i_temp, j_temp)" << a[i_temp][j_temp] << endl;
-						 
- 						 j_temp++;
- 					}						
- 					b[i_temp]=b[i_temp]-(temp_var / a[i][i])*b[i];
-					 					
- 					i_temp++;
- 				}
-			i++;
-	}
 	
 	
-//		// Display the upper triangular matrix
-//
-//		  cout << "upper triangular matrix"  << endl;
-//		  cout << a[0][0] << endl;
-//		  cout << a[0][1] << endl;
-//		  cout << a[0][2] << endl;
-//		  cout << a[1][0] << endl;
-//		  cout << a[1][1] << endl;
-//		  cout << a[1][2] << endl;
-//		  cout << a[2][0] << endl;
-//		  cout << a[2][1] << endl;
-//		  cout << a[2][2] << endl;
-//	
-//	
-//		  cout << "vector" << endl;
-//		  cout << b[0] << endl;
-//		  cout << b[1] << endl;
-//		  cout << b[2] << endl;
-		
-	// Substitute to find the solution
-	
-	
-	// Testfall für untere Matrix definieren.
-	
-	double sum; 
-	int row;
-	
-	row=size-1;
-	sum=0;
-	
-	solution_numeric[row]=(b[row]-sum)/a[row][row];
-	
-	row=row-1;
-	
-	while (row >= 0) {
-		j=0;		
-		while (row+j <= size-1) {
-		sum=sum+a[row][row+j]*solution_numeric[row+j];
-		j++;
+	// Preliminary Check
+	while(i<size) {
+		if(a[i][i] == 0) {
+			cout << "This valid has a non-zero diagonal - algorithm fails" << endl; // hier kann ggf. ein weiterer Algorithmus implementiert werden, der das vermeidet oder umgeht.
+			return 0;
 		}
-	cout << "sum" << sum << endl;
-	solution_numeric[row]=(b[row]-sum)/a[row][row];
-	sum=0;
-	row--;
+		i++;
 	}
 	
+	cout << "starting algorithm..." << endl;
+	
+	
+	// ggf. check auf vollen Rank
+	
+
+	double residual;
+	double convergence_limit;
+	sum= 0
+	
+	residual=convergence_limit+1;
+	
+	int n_iteration; // number of iterations
+	
+	
+	solution_numeric_old=solution_guess;
+
+	
+	// Jacobi algorithm
+	
+	while(residual >= convergence_limit) {
+		
+	for (i=1:1:size-1)	 {
+		
+	sum=0;
+		while( oder for-Schleife) {
+			if (i != j)
+			sum=sum+(a[i][j]*solution_numeric_old[j])
+	}
+	
+	solution_numeric[]=(b[i]-sum)/a[i][i];
+	sum=0;
+	
+	// Residual
+	
+	for () {
+			sum=sum+a[][]*solution_numeric[]-b[]
+	}
+	
+	residual=sum;
+	}
+	
+	n_iteration++;
+			
+	}
+	
+	cout << "residual" << residual << endl;
+	cout << "number of iterations" << n_iteration << endl;	
+
+	// Gauss-Seidel-algorithm
+
 	
 //	solution_numeric[size-1]=b[size-1]/a[size-1][size-1];
 //	solution_numeric[size-2]=(b[size-2]-a[size-2][size-1]*solution_numeric[size-1])/a[size-2][size-2];

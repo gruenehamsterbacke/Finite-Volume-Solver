@@ -1,0 +1,23 @@
+tools:
+check non-zero diagonal
+check full rank
+check symmetry of matrix
+
+
+Solver
+
+Gauss elimination
+Jacobi algorithm
+Gauss Seidel algorithm
+
+
+Testcase
+
+4 linear systems
+large systems from download
+
+
+Performance benchmarks
+
+
+Manual: how to use these functions
