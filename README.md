@@ -18,7 +18,7 @@ The aim is to develop a Finite-Volume-Solver.
 
 (7) Add a graphical interface
 
+## Manual
 
 
 
-Documentation is coming soon!
