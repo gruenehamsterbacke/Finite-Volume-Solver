@@ -6,7 +6,7 @@ Roadmap:
 
 (0) Basic tools (like import data files etc.)
 
-(1) Implement a class of solvers for linear systems of equations 
+(1) Implement a class of solvers for linear systems of equations (later: include LAPACK to efficiently solve the equations)
 
 (2) Implement a Finite-Volume-Solver for a simple PDEs (steady) for a simple geometry (mesh) 
 
