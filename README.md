@@ -5,6 +5,9 @@ The aim is to develop a Finite-Volume-Solver in C++.
 ## Roadmap:
 
 (0) Basic tools (like import data files etc.)
+    * generate a mesh 
+    * import the mesh
+    * import a data file containing all parameters
 
 (1) Implement a class of solvers for linear systems of equations (later: include LAPACK to efficiently solve the equations)
 
